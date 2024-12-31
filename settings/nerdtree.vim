@@ -1,5 +1,9 @@
 " F5 để bật/tắt NERDTree
 map <silent> <F5> :NERDTreeToggle<CR>
+" F6 tìm đến tệp hiện tại trong NERDTree
+nnoremap <silent> <F6> :NERDTreeFind<CR>
+" Đưa con trỏ chuột (tiêu điểm) đến cửa sổ NERDTree
+nnoremap <leader>n :NERDTreeFocus<CR>
 
 " Thoát Vim nếu NERDTree là cửa sổ duy nhất còn lại trong tab duy nhất.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<CR>:\<BS>") | endif
