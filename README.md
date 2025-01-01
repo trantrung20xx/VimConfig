@@ -2,8 +2,9 @@
 - Run command :PlugInstall after pulling this resource
 
 [Requirement]
-- NodeJS (run cmd: npm install neovim -g)
-- Python (run cmd: pip install pynvim)
+- NodeJS (if using scoop, run cmd: npm install neovim -g)
+- Python (if using scoop, run cmd: pip install pynvim)
 - Git
 - vim-plug
+- Bat (if using scoop, run cmd: scoop install bat)
 

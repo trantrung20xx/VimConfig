@@ -126,6 +126,11 @@ call plug#begin(stdpath('config').'/plugged')
     " Code syntax highlight
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     "Plug 'sheerun/vim-polyglot'
+    
+    " File search
+    Plug 'junegunn/fzf', 
+        \ { 'do': { -> fzf#install() } } " Fuzzy finder 
+    Plug 'junegunn/fzf.vim'
 
     " File browser
     Plug 'preservim/nerdTree'

@@ -34,8 +34,11 @@ nnoremap <silent> <leader>tt :FloatermToggle<CR>
 tnoremap <silent> <leader>tt <C-\><C-n>:FloatermToggle<CR>
 
 " Focus terminal 
-nnoremap <silent> <leader>tf <C-\><C-n><C-W><Left>
+nnoremap <silent> <leader>tf :FloatermToggle<CR>
 tnoremap <silent> <leader>tf <C-\><C-n><C-W><Left>
+
+" Normal mode
+tnoremap <silent> <Esc> <C-\><C-n>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Hotkey to run other console apps
