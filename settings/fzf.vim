@@ -78,7 +78,22 @@ let $FZF_DEFAULT_COMMAND='fd --hidden ' .
     \ '--exclude *.db ' .
     \ '--exclude *.tgz ' .
     \ '--exclude *.tar.gz ' .
-    \ '--exclude *.zip'
+    \ '--exclude *.zip ' .
+    \ '--exclude venv ' .
+    \ '--exclude build ' .
+    \ '--exclude .cache ' .
+    \ '--exclude out ' .
+    \ '--exclude .mypy_cache ' .
+    \ '--exclude .pytest_cache ' .
+    \ '--exclude .ipynb_checkpoints ' .
+    \ '--exclude .next ' .
+    \ '--exclude .nuxt ' .
+    \ '--exclude coverage ' .
+    \ '--exclude tmp ' .
+    \ '--exclude temp ' .
+    \ '--exclude logs ' .
+    \ '--exclude log'
+
 
 " Tùy chỉnh các tùy chọn mặc định cho FZF
 let $FZF_DEFAULT_OPTS="--layout=reverse --info=inline --exact"
