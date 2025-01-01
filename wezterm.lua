@@ -46,7 +46,7 @@ local function pick_random_background(folder)
     local images = {}
     for file in pfile:lines() do
         local ext = file:match("^.+(%..+)$") -- Lấy phần mở rộng của file
-        if ext == ".jpg" or ext == ".jpeg" or ext == ".png" or ext == ".gif" or ext == ".bmp" then 
+        if ext == ".jpg" or ext == ".jpeg" or ext == ".png" or ext == ".gif" or ext == ".JPG" or ext == ".bmp" then 
             table.insert(images, file) -- Thêm hình ảnh vào bảng
         end
     end
