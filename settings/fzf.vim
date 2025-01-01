@@ -92,7 +92,8 @@ let $FZF_DEFAULT_COMMAND='fd --hidden ' .
     \ '--exclude tmp ' .
     \ '--exclude temp ' .
     \ '--exclude logs ' .
-    \ '--exclude log'
+    \ '--exclude log ' .
+    \ '--exclude .github'
 
 
 " Tùy chỉnh các tùy chọn mặc định cho FZF
