@@ -6,7 +6,7 @@ let g:fzf_action = {
     \ }
 
 " Cấu hình giao diện hiển thị FZF
-let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.6, 'highlight': 'Comment' } }
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.9, 'highlight': 'Comment', 'relative': v:true } }
 
 " Thiết lập cửa sổ xem trước kết quả FZF
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
@@ -19,8 +19,8 @@ let g:fzf_colors = {
     \ 'fg':      ['fg', 'Normal'],
     \ 'bg':      ['bg', 'Normal'],
     \ 'hl':      ['fg', 'Comment'],
-    \ 'fg+':     ['fg', 'CursorLine', 'Normal'],
-    \ 'bg+':     ['bg', 'CursorLine'],
+    \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+    \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
     \ 'hl+':     ['fg', 'Statement'],
     \ 'info':    ['fg', 'PreProc'],
     \ 'border':  ['fg', 'Ignore'],
@@ -33,7 +33,7 @@ let g:fzf_colors = {
 
 " Cấu hình lệnh :Files để tìm kiếm tệp tin với giao diện FZF, dùng with_preview và bat để xem trước
 let g:fzf_preview_opts = {
-    \ 'options': ['--layout=reverse', '--info=inline', '--preview', 'bat --color=always --theme=TwoDark --style=header,numbers,snip --line-range :300 {}']
+    \ 'options': ['--layout=reverse', '--info=inline', '--preview', 'bat --color=always --theme=TwoDark --style=header,numbers,snip --line-range :500 {}']
     \ }
 
 command! -bang -nargs=? -complete=dir Files
