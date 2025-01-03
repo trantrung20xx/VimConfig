@@ -23,7 +23,7 @@ require'bufferline'.setup {
       return s
     end,
     offsets = { 
-      { filetype = "NvimTree", text = "File Explorer", text_align = "center", highlight = "Directory", separator = true } -- Offset cho NvimTree
+      { filetype = "nerdtree", text = "File Explorer", text_align = "center", highlight = "Directory", separator = true } -- Offset cho NvimTree
     },
     get_element_icon = function(buf)         -- Lấy biểu tượng từ nvim-web-devicons
       local icon, _ = require('nvim-web-devicons').get_icon(buf.name, buf.extension, { default = false })
