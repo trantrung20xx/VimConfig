@@ -41,9 +41,3 @@ vim.api.nvim_set_keymap('n', '<leader>bp', ':BufferLineCyclePrev<CR>', { noremap
 vim.api.nvim_set_keymap('n', '<leader>bd', ':bdelete<CR>', { noremap = true, silent = true })             -- Đóng buffer hiện tại
 EOF
 
-" " Cấu hình phím tắt cho các buffer
-" nnoremap <silent> <leader>bl :BufferLinePick<CR>      " Chọn buffer
-" nnoremap <silent> <leader>bn :BufferLineCycleNext<CR> " Chuyển sang buffer tiếp theo
-" nnoremap <silent> <leader>bp :BufferLineCyclePrev<CR> " Chuyển sang buffer trước đó
-" nnoremap <silent> <leader>bd :bdelete<CR>             " Đóng buffer hiện tại
-
