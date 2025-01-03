@@ -60,6 +60,9 @@ let g:DevIconsEnableFoldersOpenClose = 1
 " Ẩn dấu ngoặc ( [] )
 let g:NERDTreeGitStatusConcealBrackets = 1
 
+" Cho phép hiển thị các tệp ẩn
+let NERDTreeShowHidden=1
+
 " Nếu một buffer khác cố thay thế NERDTree, hãy đặt nó vào cửa sổ khác và đưa lại NERDTree.
 autocmd BufEnter * if winnr() == winnr('h') && bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
