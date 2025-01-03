@@ -2,6 +2,7 @@
 lua << EOF
 require'bufferline'.setup {
   options = {
+    mode = 'buffers',
     numbers = "ordinal",                     -- Hiển thị số thứ tự (có thể là 'none', 'ordinal', 'both')
     close_command = "bdelete",               -- Lệnh để đóng buffer
     right_mouse_command = "bdelete!",        -- Đóng buffer khi click chuột phải
@@ -22,7 +23,7 @@ require'bufferline'.setup {
       return s
     end,
     offsets = { 
-      { filetype = "NvimTree", text = "File Explorer", text_align = "center" } -- Offset cho NvimTree
+      { filetype = "NvimTree", text = "File Explorer", text_align = "center", highlight = "Directory", separator = true } -- Offset cho NvimTree
     },
     get_element_icon = function(buf)         -- Lấy biểu tượng từ nvim-web-devicons
       local icon, _ = require('nvim-web-devicons').get_icon(buf.name, buf.extension, { default = false })
@@ -32,11 +33,17 @@ require'bufferline'.setup {
     highlights = require("tokyonight.colors").setup() -- Tự động sử dụng màu sắc từ tokyonight
   },
 }
+
+-- Cấu hình phím tắt trong Lua cho các buffer
+vim.api.nvim_set_keymap('n', '<leader>bl', ':BufferLinePick<CR>', { noremap = true, silent = true })      -- Chọn buffer
+vim.api.nvim_set_keymap('n', '<leader>bn', ':BufferLineCycleNext<CR>', { noremap = true, silent = true }) -- Chuyển sang buffer tiếp theo
+vim.api.nvim_set_keymap('n', '<leader>bp', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true }) -- Chuyển sang buffer trước đó
+vim.api.nvim_set_keymap('n', '<leader>bd', ':bdelete<CR>', { noremap = true, silent = true })             -- Đóng buffer hiện tại
 EOF
 
-" Cấu hình phím tắt cho các buffer
-nnoremap <silent> <leader>bp :BufferLinePick<CR>      " Chọn buffer
-nnoremap <silent> <leader>bn :BufferLineCycleNext<CR> " Chuyển sang buffer tiếp theo
-nnoremap <silent> <leader>bb :BufferLineCyclePrev<CR> " Chuyển sang buffer trước đó
-nnoremap <silent> <leader>bd :bdelete<CR>             " Đóng buffer hiện tại
+" " Cấu hình phím tắt cho các buffer
+" nnoremap <silent> <leader>bl :BufferLinePick<CR>      " Chọn buffer
+" nnoremap <silent> <leader>bn :BufferLineCycleNext<CR> " Chuyển sang buffer tiếp theo
+" nnoremap <silent> <leader>bp :BufferLineCyclePrev<CR> " Chuyển sang buffer trước đó
+" nnoremap <silent> <leader>bd :bdelete<CR>             " Đóng buffer hiện tại
 
