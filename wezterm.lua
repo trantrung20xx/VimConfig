@@ -26,6 +26,7 @@ config.window_padding = {
 
 -- Customize window opacity
 config.window_background_opacity = 0.91
+config.text_background_opacity = 1
 config.macos_window_background_blur = 50
 
 -- Config Image
