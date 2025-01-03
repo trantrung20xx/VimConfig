@@ -29,7 +29,7 @@ let g:airline#extensions#filetype#enabled = 1                   " Hiển thị l
 let g:airline_theme = 'night_owl'                               " Chọn theme dark cho airline
 
 " Tùy chỉnh font chữ cho vim-airline
-let g:airline#extensions#tabline#font = "Hack"
+let g:airline#extensions#tabline#font = "Hack Nerd Fond"
 " Kích hoạt Powerline fonts trong vim-airline
 let g:airline_powerline_fonts = 1
 

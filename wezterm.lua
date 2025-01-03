@@ -15,7 +15,7 @@ config.window_decorations = "RESIZE"
 -- Theme
 config.color_scheme = 'Tokyo Night'
 -- Font
-config.font = wezterm.font("Hack", {
+config.font = wezterm.font("Hack Nerd Font", {
     weight = "Medium",
 })
 

@@ -4,7 +4,7 @@ let g:floaterm_height = 0.8
 let g:floaterm_title = 'Terminal $1/$2'
 let g:floaterm_wintype = 'float'
 if has('win32')
-	let g:floaterm_shell = 'powershell -nologo'
+	let g:floaterm_shell = 'pwsh -nologo'
 endif
 
 " Set floating window border line color to #61afef, and background to NONE
