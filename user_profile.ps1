@@ -7,7 +7,22 @@ $env:FZF_DEFAULT_OPTS='--height 70% --layout=reverse --border --info=inline --pr
 $env:FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git --exclude node_modules --exclude venv --exclude build --exclude dist --exclude __pycache__ --exclude .cache --exclude .idea --exclude .vscode --exclude target --exclude out --exclude .mypy_cache --exclude .pytest_cache --exclude .ipynb_checkpoints --exclude .next --exclude .nuxt --exclude coverage --exclude tmp --exclude temp --exclude logs --exclude log --exclude .github'
 
 function ff {
-    nvim $(fzf --preview 'bat --style=numbers --color=always --line-range :500 {}')
+    $file = $(fzf --preview 'bat --style=numbers --color=always --line-range :500 {}')
+    if ($file) {
+        nvim $file
+    }
+}
+
+function ffr {
+    $file = $(fd --type f --hidden --follow --exclude .git --exclude node_modules --exclude venv `
+        --exclude build --exclude dist --exclude __pycache__ --exclude .cache --exclude .idea `
+        --exclude .vscode --exclude target --exclude out --exclude .mypy_cache --exclude .pytest_cache `
+        --exclude .ipynb_checkpoints --exclude .next --exclude .nuxt --exclude coverage --exclude tmp `
+        --exclude temp --exclude logs --exclude log --exclude .github --glob "*" "$env:USERPROFILE"`
+        | fzf --preview 'bat --style=numbers --color=always --line-range :500 {}')
+    if ($file) {
+        nvim $file
+    }
 }
 
 function cdf {
@@ -22,16 +37,16 @@ function cdf {
 }
 
 function cdfr {
-    pushd .
-    cd $env:USERPROFILE
     $dir = $(fd --type d --hidden --follow --exclude .git --exclude node_modules --exclude venv `
         --exclude build --exclude dist --exclude __pycache__ --exclude .cache --exclude .idea `
         --exclude .vscode --exclude target --exclude out --exclude .mypy_cache --exclude .pytest_cache `
         --exclude .ipynb_checkpoints --exclude .next --exclude .nuxt --exclude coverage --exclude tmp `
-        --exclude temp --exclude logs --exclude log --exclude .github | fzf --preview 'tree /A {}')
+        --exclude temp --exclude logs --exclude log --exclude .github --glob "*" "$env:USERPROFILE"`
+        | fzf --preview 'tree /A {}')
     if ($dir) {
         cd $dir
-    } else {
-        popd
     }
 }
+
+
+
