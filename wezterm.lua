@@ -5,7 +5,7 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 -- Cài đặt SHELL mặc định
-config.default_prog = {"powershell.exe"}
+config.default_prog = {"powershell.exe"}    
 
 -- Tắt tab bar
 config.enable_tab_bar = false
@@ -18,6 +18,12 @@ config.color_scheme = 'Tokyo Night'
 config.font = wezterm.font("Hack Nerd Font", {
     weight = "Medium",
 })
+-- Cursor color
+config.colors = {
+    cursor_bg = "#47FF9C",
+    cursor_border = "#47FF9C",
+    cursor_fg = "#011423",
+}
 
 -- Padding
 config.window_padding = {
@@ -30,7 +36,7 @@ config.window_padding = {
 -- Customize window opacity
 config.window_background_opacity = 0.91
 config.text_background_opacity = 1
-config.macos_window_background_blur = 50
+config.macos_window_background_blur = 30
 
 -- Config Image
 config.window_background_image_hsb = {
