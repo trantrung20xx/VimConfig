@@ -36,6 +36,7 @@ let g:fzf_preview_opts = {
     \ 'options': ['--layout=reverse', '--info=inline', '--preview', 'bat --color=always --theme=TwoDark --style=header,numbers,snip --line-range :500 {}']
     \ }
 
+" Cấu hình lệnh :Files để mở tệp tin
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(g:fzf_preview_opts), <bang>0)
 
@@ -50,6 +51,13 @@ command! -bang -nargs=* Rg
 
 " Gán phím F8 để gọi lệnh :Rg
 map <F8> :Rg<CR>
+
+" Cấu hình lệnh :Buffers để hiển thị danh sách buffer và tìm kiếm
+command! -bang -nargs=* Buffers
+    \ call fzf#vim#buffers(fzf#vim#with_preview(g:fzf_preview_opts), <bang>0)
+
+" Gán phím F9 để gọi lệnh :Buffers
+map <F9> :Buffers<CR>
 
 " Thiết lập lệnh mặc định cho FZF sử dụng fd để liệt kê tệp, loại trừ các thư mục và tệp tin không cần thiết
 let $FZF_DEFAULT_COMMAND='fd --hidden ' .
