@@ -15,7 +15,7 @@ function cdf {
         --exclude build --exclude dist --exclude __pycache__ --exclude .cache --exclude .idea `
         --exclude .vscode --exclude target --exclude out --exclude .mypy_cache --exclude .pytest_cache `
         --exclude .ipynb_checkpoints --exclude .next --exclude .nuxt --exclude coverage --exclude tmp `
-        --exclude temp --exclude logs --exclude log --exclude .github | fzf --preview 'dir -Force {}')
+        --exclude temp --exclude logs --exclude log --exclude .github | fzf --preview 'tree /A {}')
     if ($dir) {
         cd $dir
     }
