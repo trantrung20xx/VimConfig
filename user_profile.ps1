@@ -20,3 +20,18 @@ function cdf {
         cd $dir
     }
 }
+
+function cdfr {
+    pushd .
+    cd $env:USERPROFILE
+    $dir = $(fd --type d --hidden --follow --exclude .git --exclude node_modules --exclude venv `
+        --exclude build --exclude dist --exclude __pycache__ --exclude .cache --exclude .idea `
+        --exclude .vscode --exclude target --exclude out --exclude .mypy_cache --exclude .pytest_cache `
+        --exclude .ipynb_checkpoints --exclude .next --exclude .nuxt --exclude coverage --exclude tmp `
+        --exclude temp --exclude logs --exclude log --exclude .github | fzf --preview 'tree /A {}')
+    if ($dir) {
+        cd $dir
+    } else {
+        popd
+    }
+}
