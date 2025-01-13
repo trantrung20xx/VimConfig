@@ -167,7 +167,7 @@ set background=dark                                  " Đặt nền tối (dark 
 hi! Normal ctermbg=NONE guibg=NONE                   " Đặt hình nền chính của Neovim là trong suốt
 hi! VertSplit ctermbg=NONE guibg=NONE                " Đặt màu nền của các đường phân tách cửa sổ là trong suốt
 hi! StatusLine ctermbg=NONE guibg=NONE               " Đặt màu nền của thanh trạng thái là trong suốt
-hi! LineNr ctermbg=NONE guibg=NONE                   " Đặt màu nền của số dòng là trong suốt
+hi! LineNr ctermbg=NONE guibg=NONE guifg=#FF966C     " Đặt màu nền của số dòng là trong suốt
 hi! NonText ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
