@@ -57,7 +57,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" Use K to show documentation in preview window
+" Use Ctrl + Alt + K to show documentation in preview window
 nnoremap <silent> <C-M-K> :call ShowDocumentation()<CR>
 
 function! ShowDocumentation()
