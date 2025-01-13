@@ -15,7 +15,7 @@ syntax on			        " Bật highlight cú pháp
 set ignorecase              " Bỏ qua chữ hoa và chữ thường khi tìm kiếm
 set autoindent              " Tự động áp dụng thụt lề cho dòng dưới dựa trên dòng hiện tại
 set encoding=UTF-8
-set signcolumn=yes          " Hiển thị cột dấu bên trái cột số dòng (hiển thị cảnh báo, lỗi hoặc git, ...)
+set signcolumn=auto         " Hiển thị cột dấu bên trái cột số dòng (hiển thị cảnh báo, lỗi hoặc git, ...)
 "set cursorline             " Làm nổi bật dòng hiện tại
 set undolevels=1000         " Số bước hoàn tác tối đa được lưu trữ cho mỗi tệp (buffer)
 set history=100             " Số lượng lệnh (khi sử dụng với : ) và tìm kiếm gần nhất được lưu trữ 
