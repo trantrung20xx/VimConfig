@@ -8,7 +8,9 @@ let g:coc_global_extension = [
         \'coc-clangd',
         \'coc-rust-analyzer',
         \'coc-java',
-        \'coc-omnisharp'
+        \'coc-omnisharp',
+        \'coc-lua',
+        \'coc-vimlsp'
         \]
 autocmd BufEnter * silent! call CocActionAsync('highlight')
 
