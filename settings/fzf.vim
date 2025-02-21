@@ -60,7 +60,7 @@ command! -bang -nargs=* Buffers
 map <F9> :Buffers<CR>
 
 " Thiết lập lệnh mặc định cho FZF sử dụng fd để liệt kê tệp, loại trừ các thư mục và tệp tin không cần thiết
-let $FZF_DEFAULT_COMMAND='fd --hidden ' .
+let $FZF_DEFAULT_COMMAND = 'fd --hidden ' .
     \ '--exclude .git ' .
     \ '--exclude __pycache__ ' .
     \ '--exclude .vagrant ' .
@@ -73,20 +73,20 @@ let $FZF_DEFAULT_COMMAND='fd --hidden ' .
     \ '--exclude .envrc ' .
     \ '--exclude target ' .
     \ '--exclude dist ' .
-    \ '--exclude *.log ' .
-    \ '--exclude *.pyc ' .
-    \ '--exclude *.pyo ' .
-    \ '--exclude *.class ' .
-    \ '--exclude *.o ' .
-    \ '--exclude *.a ' .
-    \ '--exclude *.so ' .
-    \ '--exclude *.swp ' .
-    \ '--exclude *.bak ' .
-    \ '--exclude *.tmp ' .
-    \ '--exclude *.db ' .
-    \ '--exclude *.tgz ' .
-    \ '--exclude *.tar.gz ' .
-    \ '--exclude *.zip ' .
+    \ '--exclude "*.log" ' .
+    \ '--exclude "*.pyc" ' .
+    \ '--exclude "*.pyo" ' .
+    \ '--exclude "*.class" ' .
+    \ '--exclude "*.o" ' .
+    \ '--exclude "*.a" ' .
+    \ '--exclude "*.so" ' .
+    \ '--exclude "*.swp" ' .
+    \ '--exclude "*.bak" ' .
+    \ '--exclude "*.tmp" ' .
+    \ '--exclude "*.db" ' .
+    \ '--exclude "*.tgz" ' .
+    \ '--exclude "*.tar.gz" ' .
+    \ '--exclude "*.zip" ' .
     \ '--exclude venv ' .
     \ '--exclude build ' .
     \ '--exclude .cache ' .
