@@ -1,0 +1,27 @@
+{
+  "languageserver": {
+    "arduino": {
+      "command": "/usr/bin/arduino-language-server",
+      "rootPatterns": ["*.ino"],
+      "filetypes": ["arduino"],
+      "args": [
+        "-cli", "/usr/bin/arduino-cli",
+        "-clangd", "/usr/bin/clangd",
+        "-cli-config", "/home/trantrung/.arduino15/arduino-cli.yaml",
+        "-fqbn", "esp8266:esp8266:generic"
+      ],
+      "disabledFeatures": ["semanticTokens"]
+    },
+    "cmake": {
+        "command": "cmake-language-server",
+        "filetypes": ["cmake"],
+        "rootPatterns": [
+          "build/"
+        ],
+        "initializationOptions": {
+          "buildDirectory": "build"
+        }
+     }
+  }
+}
+
