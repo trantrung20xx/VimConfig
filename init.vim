@@ -159,7 +159,7 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "-------------------- Theme tokyo night ---------------------
-"colorscheme tokyonight-moon         " night, storm, day, moon
+"colorscheme tokyonight-moon                    " night, storm, day, moon
 
 
 let g:tokyonight_style = 'night'                " available: night, storm
