@@ -106,7 +106,8 @@ inoremap <M-Up> :resize -1<CR>
 call plug#begin(stdpath('config').'/plugged')
 
     " Themes
-    Plug 'folke/tokyonight.nvim'
+    "Plug 'folke/tokyonight.nvim'
+    Plug 'ghifarit53/tokyonight-vim'
 
     " Cài đặt bufferline
     Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
@@ -158,7 +159,17 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "-------------------- Theme tokyo night ---------------------
-colorscheme tokyonight-moon         " night, storm, day, moon
+"colorscheme tokyonight-moon         " night, storm, day, moon
+
+
+let g:tokyonight_style = 'night'                " available: night, storm
+let g:tokyonight_enable_italic = 1
+let g:tokyonight_transparent_background = 1
+let g:tokyonight_disable_italic_comment = 0
+let g:tokyonight_cursor = 'auto'                " auto, red, green, blue
+let g:tokyonight_current_word = 'bold'          " bold, underline, italic, grey background
+
+colorscheme tokyonight
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Background
