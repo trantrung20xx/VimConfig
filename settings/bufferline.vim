@@ -37,7 +37,7 @@ require'bufferline'.setup {
 -- Cấu hình phím tắt trong Lua cho các buffer
 vim.api.nvim_set_keymap('n', '<leader>bl', ':BufferLinePick<CR>', { noremap = true, silent = true })      -- Chọn buffer
 vim.api.nvim_set_keymap('n', '<leader>bn', ':BufferLineCycleNext<CR>', { noremap = true, silent = true }) -- Chuyển sang buffer tiếp theo
-vim.api.nvim_set_keymap('n', '<leader>bp', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true }) -- Chuyển sang buffer trước đó
+vim.api.nvim_set_keymap('n', '<leader>bb', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true }) -- Chuyển sang buffer trước đó
 vim.api.nvim_set_keymap('n', '<leader>bd', ':bdelete<CR>', { noremap = true, silent = true })             -- Đóng buffer hiện tại
 EOF
 
