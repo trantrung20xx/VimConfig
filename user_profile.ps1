@@ -48,7 +48,7 @@ function cdfr {
     }
 }
 
-
+Remove-Item Alias:ls
 
 # Setup Alias
 $env:EZA_DEFAULT_OPTIONS = "-la --icons --color=always --git --header"
