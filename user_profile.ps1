@@ -1,6 +1,6 @@
 oh-my-posh init pwsh --config 'C:\Users\trant\scoop\apps\oh-my-posh\current\themes\amro.omp.json' | Invoke-Expression
 
-Import-Module Terminal-Icons
+#Import-Module Terminal-Icons
 
 $env:FZF_DEFAULT_OPTS='--height 70% --layout=reverse --border --info=inline --preview-window=right:50% --bind ctrl-/:toggle-preview'
 
@@ -49,4 +49,8 @@ function cdfr {
 }
 
 
+
+# Setup Alias
+Set-Alias list eza
+$env:EZA_DEFAULT_OPTIONS = "--icons --color=always --git --header"
 
