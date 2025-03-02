@@ -1,4 +1,4 @@
-oh-my-posh init pwsh --config 'C:\Users\trant\scoop\apps\oh-my-posh\current\themes\amro.omp.json' | Invoke-Expression
+#oh-my-posh init pwsh --config 'C:\Users\trant\scoop\apps\oh-my-posh\current\themes\amro.omp.json' | Invoke-Expression
 
 #Import-Module Terminal-Icons
 
@@ -51,6 +51,6 @@ function cdfr {
 
 
 # Setup Alias
-Set-Alias list eza
-$env:EZA_DEFAULT_OPTIONS = "--icons --color=always --git --header"
+$env:EZA_DEFAULT_OPTIONS = "-la --icons --color=always --git --header"
+function list { eza @($env:EZA_DEFAULT_OPTIONS -split " ") $args }
 
