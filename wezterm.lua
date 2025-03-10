@@ -99,8 +99,8 @@ config.keys = {
     },
     -- Đóng pane hiện tại (Cần xác nhận)
     {
-        key = "W",
-        mods = "CTRL|ALT",
+        key = "w",
+        mods = "CTRL",
         action = wezterm.action{CloseCurrentPane={confirm=true}},
     },
      -- Di chuyển giữa các pane
