@@ -1,3 +1,21 @@
+#Clear All Window
+cls
+
+$ascii = @"
+
+     _______                       _______
+    |_     _|.----..---.-..-----. |_     _|.----..--.--..-----..-----.
+      |   |  |   _||  _  ||     |   |   |  |   _||  |  ||     ||  _  |
+      |___|  |__|  |___._||__|__|   |___|  |__|  |_____||__|__||___  |
+                                                               |_____|
+
+"@
+
+Write-Host $ascii
+
+#==========================================================================================================================================#
+#==========================================================================================================================================#
+
 #oh-my-posh init pwsh --config 'C:\Users\trant\scoop\apps\oh-my-posh\current\themes\amro.omp.json' | Invoke-Expression
 
 #Import-Module Terminal-Icons
@@ -54,5 +72,3 @@ Remove-Item Alias:ls
 $env:EZA_DEFAULT_OPTIONS = "--icons --color=always --git --header"
 function list { eza @($env:EZA_DEFAULT_OPTIONS -split " ") $args }
 
-# Clear All Windows
-cls
