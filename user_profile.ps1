@@ -2,7 +2,7 @@
 
 #Import-Module Terminal-Icons
 
-$env:FZF_DEFAULT_OPTS='--height 70% --layout=reverse --border --info=inline --preview-window=right:50% --bind ctrl-/:toggle-preview'
+$env:FZF_DEFAULT_OPTS='--height 80% --layout=reverse --border --info=inline --preview-window=right:50% --bind ctrl-/:toggle-preview'
 
 $env:FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git --exclude node_modules --exclude venv --exclude build --exclude dist --exclude __pycache__ --exclude .cache --exclude .idea --exclude .vscode --exclude target --exclude out --exclude .mypy_cache --exclude .pytest_cache --exclude .ipynb_checkpoints --exclude .next --exclude .nuxt --exclude coverage --exclude tmp --exclude temp --exclude logs --exclude log --exclude .github'
 
@@ -51,6 +51,8 @@ function cdfr {
 Remove-Item Alias:ls
 
 # Setup Alias
-$env:EZA_DEFAULT_OPTIONS = "-la --icons --color=always --git --header"
+$env:EZA_DEFAULT_OPTIONS = "--icons --color=always --git --header"
 function list { eza @($env:EZA_DEFAULT_OPTIONS -split " ") $args }
 
+# Clear All Windows
+cls
