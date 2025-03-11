@@ -18,7 +18,7 @@ Write-Host $ascii
 Import-Module posh-git
 
 # Set Theme
-oh-my-posh init powershell  --config "$env:POSH_THEMES_PATH/honukai.omp.json" | Invoke-Expression
+oh-my-posh init powershell  --config "$env:POSH_THEMES_PATH/half-life.omp.json" | Invoke-Expression
 
 # Function
 $env:FZF_DEFAULT_OPTS='--height 80% --layout=reverse --border --info=inline --preview-window=right:50% --bind ctrl-/:toggle-preview'
