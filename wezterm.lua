@@ -5,7 +5,7 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 -- Cài đặt SHELL mặc định
-config.default_prog = {"powershell.exe"}    
+config.default_prog = {"powershell.exe", "-NoLogo"}    
 
 -- Tắt tab bar
 config.enable_tab_bar = false

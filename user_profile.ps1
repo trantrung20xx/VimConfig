@@ -1,6 +1,4 @@
-#Clear All Window
-cls
-
+# HELLO
 $ascii = @"
 
      _______                       _______
