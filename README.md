@@ -6,5 +6,3 @@
 - Python (if using scoop, run cmd: `pip install pynvim`)
 - Git
 - vim-plug
-- Bat (if using scoop, run cmd: `scoop install bat`)
-
