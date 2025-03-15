@@ -1,21 +1,65 @@
+# Sử dụng phong cách định dạng dựa trên LLVM
 BasedOnStyle: LLVM
+
+# Số khoảng trắng dùng để thụt dòng (indentation)
 IndentWidth: 4
+
+# Số khoảng trắng tương ứng với một tab (chỉ áp dụng nếu có tab)
 TabWidth: 4
+
+# Không sử dụng tab, chỉ dùng dấu cách để thụt dòng
 UseTab: Never
+
+# Căn chỉnh các phép gán liên tiếp để chúng thẳng cột, giúp mã nguồn dễ đọc hơn
 AlignConsecutiveAssignments: true
+
+# Căn chỉnh các macro liên tiếp để chúng thẳng hàng
 AlignConsecutiveMacros: true
+
+# Căn chỉnh các khai báo liên tiếp để chúng dễ nhìn hơn
 AlignConsecutiveDeclarations: true
+
+# Căn chỉnh các comment cuối dòng để chúng thẳng hàng, tăng tính dễ đọc
 AlignTrailingComments: true
+
+# Cho phép các hàm ngắn (hàm chỉ có một dòng) nằm trên cùng một dòng
 AllowShortFunctionsOnASingleLine: All
+
+# Tự động sắp xếp các dòng #include theo thứ tự alphabet
 SortIncludes: true
+
+# Thêm khoảng trắng trước dấu mở ngoặc đơn trong câu lệnh điều kiện và vòng lặp (if, for, while, switch)
 SpaceBeforeParens: ControlStatements
+
+# Thụt đầu dòng (indent) cho các nhãn case trong switch
 IndentCaseLabels: true
+
+# Dấu ngoặc nhọn mở của khối code sẽ gắn liền với dòng lệnh trước đó
 BreakBeforeBraces: Attach
+
+# Căn chỉnh con trỏ (*) hoặc tham chiếu (&) về phía kiểu dữ liệu thay vì tên biến
 PointerAlignment: Left
+# Ví dụ:
+# int* ptr;  // Thay vì: int *ptr;
+
+# Nếu có dấu [ mở, thụt đầu dòng bên trong nó thay vì căn theo phần tử trước đó
 AlignAfterOpenBracket: BlockIndent
+
+# Không gộp nhiều tham số vào một dòng để mã dễ đọc hơn
 BinPackParameters: false
+
+# Không gộp nhiều đối số vào một dòng khi gọi hàm
 BinPackArguments: false
+
+# Không có hình phạt khi xuống dòng trước tham số đầu tiên của một lời gọi hàm
 PenaltyBreakBeforeFirstCallParameter: 0
+
+# Xuống dòng danh sách khởi tạo constructor sau dấu hai chấm (:)
 BreakConstructorInitializers: AfterColon
+
+# Giới hạn chiều dài dòng mã nguồn là 90 ký tự
 ColumnLimit: 90
+
+# Không có hình phạt khi kiểu trả về của hàm được đặt trên một dòng riêng biệt
 PenaltyReturnTypeOnItsOwnLine: 0
+
