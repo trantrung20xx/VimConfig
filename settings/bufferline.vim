@@ -30,7 +30,7 @@ require'bufferline'.setup {
       return icon or ''
     end,
 
-    --highlights = require("tokyonight.colors").setup() -- Tự động sử dụng màu sắc từ tokyonight
+    highlights = require("tokyonight.colors").setup() -- Tự động sử dụng màu sắc từ tokyonight
   },
 }
 
