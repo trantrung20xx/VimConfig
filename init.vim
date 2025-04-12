@@ -198,6 +198,10 @@ EOF
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Other setting
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Ánh xạ phím tắt <leader>td để bật/tắt hiển thị lỗi của coc.nvim (diagnostics)
+nnoremap <silent> <leader>td :call CocAction('diagnosticToggle')<CR>
+
 for setting_file in split(glob(stdpath('config').'/settings/*.vim'))
   execute 'source' setting_file
 endfor
