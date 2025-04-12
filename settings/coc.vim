@@ -69,8 +69,6 @@ nmap <leader>rn <Plug>(coc-rename)
 
 " Định dạng đoạn mã được chọn
 xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-xmap <leader>f :call CocActionAsync('format')<CR>
 nmap <leader>f :call CocActionAsync('format')<CR>
 
 " Cấu hình định dạng tự động theo loại file
