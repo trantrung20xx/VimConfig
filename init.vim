@@ -1,17 +1,17 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set number		        	" Hiển thị số dòng
+set number                  " Hiển thị số dòng
 set relativenumber          " Số dòng tương đối
 set mouse=a                 " Cho phép sử dụng chuột
-set tabstop=4       		" Kích thước tab là 4 ký tự
-set shiftwidth=4	    	" Độ rộng khi thụt dòng
+set tabstop=4               " Kích thước tab là 4 ký tự
+set shiftwidth=4            " Độ rộng khi thụt dòng
 set smarttab                " Nếu con trỏ ở đầu dòng thì thụt lề theo shiftwidth, giữa dòng theo tabstop
-set expandtab			    " Sử dụng khoảng trắng thay vì tab
+" set expandtab               " Sử dụng khoảng trắng thay vì tab
 set termguicolors           " Bật chế độ màu 24-bit (có thể hiển thị 16.7 triệu màu thay vì 256 màu mặc định)
-syntax on			        " Bật highlight cú pháp
-"set listchars=tab:\¦\      " Tab sẽ được hiển thị bằng ký tự ¦
-"set list                   " Hiển thị các ký tự không in được (tab, khoảng trống, dòng mới)
+syntax on                   " Bật highlight cú pháp
+set listchars=tab:\│\       " Tab sẽ được hiển thị bằng ký tự ¦ (│)
+set list                    " Hiển thị các ký tự không in được (tab, khoảng trống, dòng mới)
 set ignorecase              " Bỏ qua chữ hoa và chữ thường khi tìm kiếm
 set autoindent              " Tự động áp dụng thụt lề cho dòng dưới dựa trên dòng hiện tại
 set encoding=UTF-8
@@ -113,11 +113,13 @@ call plug#begin(stdpath('config').'/plugged')
     Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
     " Cài đặt nvim-web-devicons để hiển thị biểu tượng cho các buffer
     Plug 'nvim-tree/nvim-web-devicons'
+    " Cài đặt lualine
+    Plug 'nvim-lualine/lualine.nvim'
 
     " Cài đặt vim-airline
-    Plug 'vim-airline/vim-airline'
+    "Plug 'vim-airline/vim-airline'
     " Cài đặt các theme của vim-airline (tuỳ chọn)
-    Plug 'vim-airline/vim-airline-themes'
+    "Plug 'vim-airline/vim-airline-themes'
 
     " Code intellisense
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -159,7 +161,7 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "-------------------- Theme tokyo night ---------------------
-colorscheme tokyonight-moon                    " night, storm, day, moon
+colorscheme tokyonight-night                    " night, storm, day, moon
 
 let g:tokyonight_style = 'night'                " available: night, storm
 let g:tokyonight_enable_italic = 0
