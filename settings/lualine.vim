@@ -68,6 +68,10 @@ local lualine_config = {
     component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' },
     globalstatus = true,
+	disabled_filetypes = { 
+        statusline = { 'nerdtree', 'neo-tree', 'NvimTree' },
+        winbar = {},
+    },
     refresh = {
       statusline = 100,
       tabline = 1000,
