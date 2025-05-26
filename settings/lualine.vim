@@ -189,7 +189,7 @@ require('lualine').setup {
         'tabs',
         mode = 1, -- Hiển thị tên tab
         tabs_color = {
-          active = { fg = '#61afef', gui = 'bold' },
+          active = { fg = '#2e3440', gui = 'bold' },
           inactive = { fg = '#4b5263' },
         },
       },
