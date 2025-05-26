@@ -1,22 +1,38 @@
 lua <<EOF
+-- Hàm tùy chỉnh để lấy trạng thái CoC với spinner
+local function coc_status()
+  local status = vim.fn['coc#status']() or ''
+  local spinners = { '⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏' }
+  local done = '✓'
+  local coc_info = vim.g.coc_service_initialized and vim.g.coc_service_initialized == 1
+  if coc_info and status ~= '' then
+    local spinner_idx = math.floor(vim.loop.now() / 100) % #spinners + 1
+    return spinners[spinner_idx] .. ' ' .. status
+  elseif coc_info then
+    return done .. ' CoC'
+  else
+    return 'No CoC'
+  end
+end
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'auto', -- Tự động chọn theme dựa trên colorscheme của Neovim
-    component_separators = { left = '', right = '' },
-    section_separators = { left = '', right = '' },
+    theme = 'auto', -- Tự động chọn theme, tương thích với colorscheme
+    component_separators = { left = '', right = '' }, -- Separators nhẹ hơn
+    section_separators = { left = '', right = '' }, -- Separators mượt hơn
     disabled_filetypes = {
-      statusline = { 'nerdtree', 'neo-tree', 'NvimTree', 'dashboard', 'alpha' },
+      statusline = { 'nerdtree', 'neo-tree', 'NvimTree', 'dashboard', 'alpha', 'startify' },
       winbar = {},
     },
-    ignore_focus = { 'toggleterm', 'qf' },
+    ignore_focus = { 'toggleterm', 'qf', 'help' },
     always_divide_middle = true,
     globalstatus = true,
     refresh = {
       statusline = 100,
       tabline = 100,
       winbar = 100,
-    }
+    },
   },
   sections = {
     lualine_a = {
@@ -25,16 +41,24 @@ require('lualine').setup {
         icons_enabled = true,
         icon = '', -- Biểu tượng cho mode
         fmt = function(str) return str:sub(1, 1) end, -- Hiển thị chữ cái đầu của mode
+        color = { gui = 'bold' },
+      },
+      {
+        -- Thành phần lsp_status cho CoC
+        coc_status,
+        icon = '', -- Biểu tượng cho CoC status
+        color = { fg = '#2e3440', gui = 'bold' }, -- Xanh đen rất đậm, dễ nhìn
       },
     },
     lualine_b = {
       {
         'branch',
         icon = '', -- Biểu tượng Git branch
+        color = { fg = '#98c379' }, -- Màu xanh lá
       },
       {
         'diff',
-        symbols = { added = ' ', modified = ' ', removed = ' ' }, -- Icons cho diff
+        symbols = { added = ' ', modified = ' ', removed = ' ' },
         diff_color = {
           added = { fg = '#98c379' },
           modified = { fg = '#e5c07b' },
@@ -43,7 +67,7 @@ require('lualine').setup {
       },
       {
         'diagnostics',
-        sources = { 'nvim_lsp', 'coc' }, -- Hỗ trợ cả LSP và COC
+        sources = { 'coc' }, -- Chỉ dùng CoC diagnostics
         symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
         diagnostics_color = {
           error = { fg = '#e06c75' },
@@ -56,63 +80,61 @@ require('lualine').setup {
     lualine_c = {
       {
         'filename',
-        file_status = true, -- Hiển thị trạng thái file (modified, readonly)
-        path = 1, -- Hiển thị đường dẫn tương đối
+        file_status = true,
+        path = 1, -- Đường dẫn tương đối
         symbols = {
-          modified = '●', -- Biểu tượng khi file được sửa đổi
-          readonly = '', -- Biểu tượng khi file chỉ đọc
-          unnamed = '[No Name]', -- Tên khi file không có tên
+          modified = '●',
+          readonly = '',
+          unnamed = '[No Name]',
         },
+        color = { fg = '#d8dee9' }, -- Màu trắng xám nhẹ
       },
       {
-        -- Hiển thị thông tin LSP
-        function()
-          local msg = 'No LSP'
-          local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-          local clients = vim.lsp.get_active_clients()
-          if next(clients) == nil then return msg end
-          for _, client in ipairs(clients) do
-            local filetypes = client.config.filetypes
-            if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-              return client.name
-            end
-          end
-          return msg
-        end,
-        icon = ' LSP:', -- Biểu tượng cho LSP
-        color = { fg = '#ffffff', gui = 'bold' },
+        'searchcount',
+        icon = '', -- Biểu tượng tìm kiếm
+        color = { fg = '#61afef' }, -- Màu xanh dương
       },
     },
     lualine_x = {
       {
         'encoding',
-        icon = ' ', -- Biểu tượng cho encoding
+        icon = ' ',
+        color = { fg = '#abb2bf' },
       },
       {
         'fileformat',
         icons_enabled = true,
         symbols = {
-          unix = '', -- Biểu tượng cho Unix
-          dos = '', -- Biểu tượng cho Windows
-          mac = '', -- Biểu tượng cho Mac
+          unix = '',
+          dos = '',
+          mac = '',
         },
+        color = { fg = '#abb2bf' },
       },
       {
         'filetype',
-        icon_only = true, -- Chỉ hiển thị icon của filetype
+        --icon_only = true,
+        color = { fg = '#abb2bf' },
       },
     },
     lualine_y = {
       {
         'progress',
-        icon = '', -- Biểu tượng mới cho progress
-        fmt = function() return '%P/%L' end, -- Hiển thị phần trăm và số dòng
+        icon = '', -- Biểu tượng progress
+        fmt = function() return '%P/%L' end,
+        color = { fg = '#98c379' },
+      },
+      {
+        'selectioncount',
+        icon = '', -- Biểu tượng cho số lượng chọn
+        color = { fg = '#e5c07b' },
       },
     },
     lualine_z = {
       {
         'location',
-        icon = '', -- Biểu tượng cho vị trí con trỏ
+        icon = '',
+        color = { fg = '#2e3440', gui = 'bold' }, -- Xanh đen rất đậm, dịu mắt
       },
     },
   },
@@ -129,6 +151,7 @@ require('lualine').setup {
           readonly = '',
           unnamed = '[No Name]',
         },
+        color = { fg = '#4b5263' }, -- Màu xám cho inactive
       },
     },
     lualine_x = { 'location' },
@@ -142,11 +165,18 @@ require('lualine').setup {
         show_filename_only = true,
         hide_filename_extension = true,
         show_modified_status = true,
-        mode = 2, -- Hiển thị tên buffer và số
+        mode = 4, -- Hiển thị buffer với icon filetype
         symbols = {
           modified = ' ●',
           alternate_file = '',
           directory = '',
+        },
+        filetype_names = {
+          TelescopePrompt = '',
+          markdown = '',
+          python = '',
+          cpp = '',
+          c = '',
         },
       },
     },
@@ -154,10 +184,19 @@ require('lualine').setup {
     lualine_c = {},
     lualine_x = {},
     lualine_y = {},
-    lualine_z = { 'tabs' },
+    lualine_z = {
+      {
+        'tabs',
+        mode = 1, -- Hiển thị tên tab
+        tabs_color = {
+          active = { fg = '#61afef', gui = 'bold' },
+          inactive = { fg = '#4b5263' },
+        },
+      },
+    },
   },
   winbar = {},
   inactive_winbar = {},
-  extensions = { 'nvim-tree', 'fugitive', 'quickfix', 'toggleterm' },
+  extensions = { 'nvim-tree', 'fugitive', 'quickfix', 'toggleterm', 'man', 'lazy' },
 }
 EOF
