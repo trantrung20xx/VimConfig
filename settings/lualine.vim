@@ -74,8 +74,8 @@ local lualine_config = {
     },
     refresh = {
       statusline = 100,
-      tabline = 1000,
-      winbar = 1000,
+      tabline = 100,
+      winbar = 100,
     }
   },
   sections = {
