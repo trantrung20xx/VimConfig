@@ -192,4 +192,12 @@ require('lualine').setup {
   inactive_winbar = {},
   extensions = { 'nvim-tree', 'fugitive', 'quickfix', 'toggleterm', 'man', 'lazy' },
 }
+
+-- Chuyển buffer Next/Previous
+vim.api.nvim_set_keymap('n', '<leader>bn', ':bnext<CR>', { noremap = true, silent = true })       -- Buffer Next
+vim.api.nvim_set_keymap('n', '<leader>bb', ':bprevious<CR>', { noremap = true, silent = true })   -- Buffer Previous
+vim.api.nvim_set_keymap('n', '<leader>bd', ':bdelete<CR>', { noremap = true, silent = true })     -- Delete Buffer
+
+-- Mở danh sách buffers bằng fzf
+vim.api.nvim_set_keymap('n', '<leader>bl', ':Buffers<CR>', { noremap = true, silent = true })    -- List Buffers (fzf.vim)
 EOF
