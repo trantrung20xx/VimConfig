@@ -171,13 +171,6 @@ require('lualine').setup {
           alternate_file = '',
           directory = '',
         },
-        filetype_names = {
-          TelescopePrompt = '',
-          markdown = '',
-          python = '',
-          cpp = '',
-          c = '',
-        },
       },
     },
     lualine_b = {},
