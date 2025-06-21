@@ -190,7 +190,7 @@ hi! NonText ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
 if exists("g:neovide")
 
   " Độ trong suốt toàn giao diện
-  let g:neovide_transparency = 0.85
+  let g:neovide_opacity = 0.85
 
   " Làm mờ floating window (gợi ý, hint, v.v.)
   let g:neovide_floating_blur_amount_x = 6.0
