@@ -199,6 +199,11 @@ if exists("g:neovide")
   " Lưu kích thước cửa sổ khi đóng
   let g:neovide_remember_window_size = v:true
 
+  let g:neovide_cursor_vfx_particle_lifetime = 0.8         " Thời gian tồn tại của hạt hiệu ứng (giây)
+  let g:neovide_cursor_vfx_particle_density = 10.0         " Mật độ hạt hiệu ứng
+  let g:neovide_input_macos_alt_is_meta = v:true           " Alt sẽ đóng vai trò là phím Meta (macOS)
+  let g:neovide_scroll_animation_length = 0.3              " Độ dài hiệu ứng cuộn (giây)
+
   " Hiệu ứng chuột
   let g:neovide_cursor_vfx_mode = "railgun"  " hoặc: torpedo, pixiedust, sonicboom...
 
