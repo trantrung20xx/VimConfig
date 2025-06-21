@@ -184,6 +184,27 @@ hi! LineNr ctermbg=NONE guibg=NONE guifg=#FF966C     " Đặt màu nền của s
 hi! NonText ctermbg=NONE guibg=NONE ctermfg=NONE guifg=NONE
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Setup Neovide
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Kiểm tra nếu đang chạy Neovide
+if exists("g:neovide")
+
+  " Độ trong suốt toàn giao diện
+  let g:neovide_transparency = 0.85
+
+  " Làm mờ floating window (gợi ý, hint, v.v.)
+  let g:neovide_floating_blur_amount_x = 6.0
+  let g:neovide_floating_blur_amount_y = 6.0
+
+  " Lưu kích thước cửa sổ khi đóng
+  let g:neovide_remember_window_size = v:true
+
+  " Hiệu ứng chuột
+  let g:neovide_cursor_vfx_mode = "railgun"  " hoặc: torpedo, pixiedust, sonicboom...
+
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => nvim-autopairs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 lua << EOF
