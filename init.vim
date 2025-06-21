@@ -40,6 +40,9 @@ else                        " Không phải Windows (MacOS, Linux)
 endif
 
 
+" Close buffer without exitting vim 
+nnoremap <silent> <leader>bd :bp \| sp \| bn \| bd<CR>
+
 " Auto reload content changed outside
 au CursorHold,CursorHoldI * checktime
 au FocusGained,BufEnter * :checktime
