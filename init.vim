@@ -116,13 +116,11 @@ call plug#begin(stdpath('config').'/plugged')
     Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
     " Cài đặt nvim-web-devicons để hiển thị biểu tượng cho các buffer
     Plug 'nvim-tree/nvim-web-devicons'
-    " Cài đặt lualine
-    Plug 'nvim-lualine/lualine.nvim'
 
     " Cài đặt vim-airline
-    "Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline'
     " Cài đặt các theme của vim-airline (tuỳ chọn)
-    "Plug 'vim-airline/vim-airline-themes'
+	Plug 'vim-airline/vim-airline-themes'
 
     " Code intellisense
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -131,7 +129,7 @@ call plug#begin(stdpath('config').'/plugged')
 
     " Code syntax highlight
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-    "Plug 'sheerun/vim-polyglot'
+	Plug 'sheerun/vim-polyglot'
     
     " File search
     Plug 'junegunn/fzf', 
