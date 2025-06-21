@@ -17,7 +17,7 @@ let g:coc_global_extension = [
 autocmd BufEnter * silent! call CocActionAsync('highlight')
 
 " Giảm thời gian cập nhật để cải thiện trải nghiệm người dùng (mặc định là 4000ms)
-set updatetime=300
+set updatetime=4000
 
 " Dùng phím Tab để gợi ý và chuyển qua lại giữa các lựa chọn gợi ý
 inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#next(1) :

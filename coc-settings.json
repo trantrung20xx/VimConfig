@@ -1,26 +1,48 @@
 {
-  "languageserver": {
-    "arduino": {
-      "command": "/usr/bin/arduino-language-server",
-      "args": [
-        "-cli", "/usr/bin/arduino-cli",
-        "-clangd", "/usr/bin/clangd",
-        "-cli-config", "/home/trantrung/.arduino15/arduino-cli.yaml",
-        "-fqbn", "esp32:esp32:esp32",
-        "-log", "-"
-      ],
-      "filetypes": ["arduino"],
-      "rootPatterns": ["*.ino", "Makefile", ".git"],
-      "disabledFeatures":["semanticTokens"]
-    },
-    "cmake": {
-      "command": "cmake-language-server",
-      "filetypes": ["cmake"],
-      "rootPatterns": ["build/"],
-      "initializationOptions": {
-        "buildDirectory": "build"
-      }
-    }
-  }
+	"clangd.arguments": [
+		"--inlay-hints=false",
+		"--function-arg-placeholders=false"
+	],
+	"inlayHint.enable": false,
+	"languageserver": {
+		"arduino": {
+			"command": "/usr/bin/arduino-language-server",
+			"args": [
+				"-cli",
+				"/usr/bin/arduino-cli",
+				"-clangd",
+				"/usr/bin/clangd",
+				"-cli-config",
+				"/home/trantrung/.arduino15/arduino-cli.yaml",
+				"-fqbn",
+				"esp32:esp32:esp32",
+				"-log",
+				"-"
+			],
+			"filetypes": [
+				"arduino"
+			],
+			"rootPatterns": [
+				"*.ino",
+				"Makefile",
+				".git"
+			],
+			"disabledFeatures": [
+				"semanticTokens"
+			]
+		},
+		"cmake": {
+			"command": "cmake-language-server",
+			"filetypes": [
+				"cmake"
+			],
+			"rootPatterns": [
+				"build/"
+			],
+			"initializationOptions": {
+				"buildDirectory": "build"
+			}
+		}
+	}
 }
 
