@@ -22,6 +22,6 @@ none_ls.setup({
     none_ls.builtins.diagnostics.pylint,
   },
   debug = false,
-  vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {}),
+  vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format, {}),
 })
 EOF

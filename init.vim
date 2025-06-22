@@ -63,8 +63,6 @@ autocmd FileChangedShellPost *
 inoremap <silent> <S-Insert> <C-R>+         " Dán nội dung trực tiếp từ clipboard trong insert mode
 
 " Key mapppings
-nnoremap J 5j
-nnoremap K 5k
 nnoremap <silent> <M-k> :move .-2<CR>==[                 " Di chuyển con trỏ lên trên 2 dòng
 nnoremap <silent> <M-j> :move .+1<CR>==[                 " Di chuyển con trỏ xuống dưới 1 dòng
 nnoremap <silent> <M-J> :t..<CR>==[                      " Sao chép dòng hiện tại xuống dưới dòng hiện tại
