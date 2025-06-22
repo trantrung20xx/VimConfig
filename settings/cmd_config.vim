@@ -5,7 +5,7 @@ local luasnip = require("luasnip")
 local lspkind = require("lspkind")
 
 -- Cần load friendly-snippets nếu chưa được load ở đâu đó
--- (Trong đoạn setup plugin của bạn, bạn đã có friendly-snippets là dependency của LuaSnip, nên nó sẽ được load)
+-- (Trong đoạn setup plugin, đã có friendly-snippets là dependency của LuaSnip, nên nó sẽ được load)
 require("luasnip.loaders.from_vscode").lazy_load()
 
 cmp.setup({
