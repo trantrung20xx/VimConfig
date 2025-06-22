@@ -109,27 +109,24 @@ inoremap <M-Up> :resize -1<CR>
 call plug#begin(stdpath('config').'/plugged')
 
     " Themes
-    Plug 'folke/tokyonight.nvim'
-    " Plug 'ghifarit53/tokyonight-vim'
+	Plug 'folke/tokyonight.nvim'
 
     " Cài đặt bufferline
     Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
     " Cài đặt nvim-web-devicons để hiển thị biểu tượng cho các buffer
     Plug 'nvim-tree/nvim-web-devicons'
 
-    " Cài đặt vim-airline
-	Plug 'vim-airline/vim-airline'
-    " Cài đặt các theme của vim-airline (tuỳ chọn)
-	Plug 'vim-airline/vim-airline-themes'
-
+	" Cài đặt lualine
+	Plug 'nvim-lualine/lualine.nvim'
+	
     " Code intellisense
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'preservim/nerdcommenter'       " Comment code
-    Plug 'windwp/nvim-autopairs'         " Parenthesis auto
+    Plug 'preservim/nerdcommenter'         " Comment code
+    Plug 'windwp/nvim-autopairs'           " Parenthesis auto
+	" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
     " Code syntax highlight
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-	Plug 'sheerun/vim-polyglot'
+	" Plug 'sheerun/vim-polyglot'
     
     " File search
     Plug 'junegunn/fzf', 
@@ -155,6 +152,35 @@ call plug#begin(stdpath('config').'/plugged')
 
     " Smooth scroll
     Plug 'karb94/neoscroll.nvim'
+
+	" ================ Các plugin cần thiết cho LSP ==================
+	
+	" Plugin để dễ dàng cấu hình các LSP servers
+	Plug 'neovim/nvim-lspconfig'
+
+	" Quản lý và cài đặt LSP servers 
+	Plug 'williamboman/mason.nvim'
+	Plug 'williamboman/mason-lspconfig.nvim'
+
+	" Plugin tự động hoàn thành (autocompletion)
+	Plug 'hrsh7th/nvim-cmp'
+	Plug 'hrsh7th/cmp-nvim-lsp'    " Nguồn LSP cho nvim-cmp
+	Plug 'hrsh7th/cmp-buffer'     " Nguồn buffer cho nvim-cmp
+	Plug 'hrsh7th/cmp-path'       " Nguồn path cho nvim-cmp
+
+	" Engine và nguồn Snippet (tự động điền các đoạn code mẫu)
+	Plug 'L3MON4D3/LuaSnip'
+	Plug 'saadparwaiz1/cmp_luasnip'
+
+	" Hiển thị thông báo tiến trình của LSP
+	Plug 'j-hui/fidget.nvim'
+
+	" null-ls: Để thêm các formatter và linter không phải LSP
+	Plug 'nvimtools/none-ls.nvim'
+	Plug 'nvimtools/none-ls-extras.nvim'
+
+	Plug 'onsails/lspkind.nvim'
+
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -234,7 +260,3 @@ nnoremap <silent> <leader>td :call CocAction('diagnosticToggle')<CR>
 for setting_file in split(glob(stdpath('config').'/settings/*.vim'))
   execute 'source' setting_file
 endfor
-
-
-
-
