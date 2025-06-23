@@ -19,8 +19,8 @@ cmp.setup({
     documentation = cmp.config.window.bordered(), -- Khung tài liệu có viền
   },
   mapping = cmp.mapping.preset.insert({
-    ['<C-b>'] = cmp.mapping.scroll_docs(-5), -- Cuộn tài liệu lên
-    ['<C-f>'] = cmp.mapping.scroll_docs(5),  -- Cuộn tài liệu xuống
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4), -- Cuộn tài liệu lên
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),  -- Cuộn tài liệu xuống
     ['<C-Space>'] = cmp.mapping.complete(),  -- Kích hoạt tự động hoàn thành
     ['<C-e>'] = cmp.mapping.abort(),         -- Hủy tự động hoàn thành
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Chấp nhận mục đã chọn (chọn và chèn)
