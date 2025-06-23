@@ -58,10 +58,10 @@ local servers = {
   "jdtls",
 }
 
-mason_lspconfig.setup({
-  ensure_installed = servers,
-  automatic_installation = true,
-})
+-- mason_lspconfig.setup({
+  -- ensure_installed = servers,
+  -- automatic_installation = true,
+-- })
 
 -- 4. Duyệt qua từng server để cấu hình
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
