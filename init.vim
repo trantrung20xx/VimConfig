@@ -176,6 +176,7 @@ call plug#begin(stdpath('config').'/plugged')
 	" null-ls: Để thêm các formatter và linter không phải LSP
 	Plug 'nvimtools/none-ls.nvim'
 	Plug 'nvimtools/none-ls-extras.nvim'
+	Plug 'nvim-lua/plenary.nvim'
 
 	Plug 'onsails/lspkind.nvim'
 
