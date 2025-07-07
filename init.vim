@@ -200,7 +200,7 @@ let g:tokyonight_current_word = 'bold'          " bold, underline, italic, grey 
 " => Background
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set background=dark                                  " Đặt nền tối (dark - tối, light - sáng)
-hi! Normal ctermbg=NONE guibg=NONE                   " Đặt hình nền chính của Neovim là trong suốt
+" hi! Normal ctermbg=NONE guibg=NONE                   " Đặt hình nền chính của Neovim là trong suốt
 hi! VertSplit ctermbg=NONE guibg=NONE                " Đặt màu nền của các đường phân tách cửa sổ là trong suốt
 hi! StatusLine ctermbg=NONE guibg=NONE               " Đặt màu nền của thanh trạng thái là trong suốt
 hi! LineNr ctermbg=NONE guibg=NONE guifg=#FF966C     " Đặt màu nền của số dòng là trong suốt
@@ -223,12 +223,12 @@ if exists("g:neovide")
   let g:neovide_remember_window_size = v:true
 
   let g:neovide_cursor_vfx_particle_lifetime = 0.8         " Thời gian tồn tại của hạt hiệu ứng (giây)
-  let g:neovide_cursor_vfx_particle_density = 10.0         " Mật độ hạt hiệu ứng
+  let g:neovide_cursor_vfx_particle_density = 0.0          " Mật độ hạt hiệu ứng
   let g:neovide_input_macos_alt_is_meta = v:true           " Alt sẽ đóng vai trò là phím Meta (macOS)
   let g:neovide_scroll_animation_length = 0.3              " Độ dài hiệu ứng cuộn (giây)
 
   " Hiệu ứng chuột
-  let g:neovide_cursor_vfx_mode = "railgun"  " hoặc: torpedo, pixiedust, sonicboom...
+  let g:neovide_cursor_vfx_mode = "torpedo"  " hoặc: railgun, torpedo, pixiedust, sonicboom...
 
 endif
 
